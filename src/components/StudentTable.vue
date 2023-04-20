@@ -26,7 +26,7 @@
                         v-bind:student="student" 
                         v-bind:key="student.starID" 
                         v-bind:edit="editTable"
-                        v-on:student-arrived-or-left="arrivedOrLeft"
+                        v-on:arrived-or-left="arrivedOrLeft"
                         v-on:delete-student="deleteStudent">
                     </student-row>
                 </table>

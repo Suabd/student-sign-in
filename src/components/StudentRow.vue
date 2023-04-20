@@ -5,25 +5,26 @@
         <td>{{ student.starID }}</td>
         <td>
         <input type="checkbox" v-on:change="arrivedOrLeft(student, $event.srcElement.checked)"></td>
-        <td v-show="edit"><img v-on:click="deleteStudent" src="@/assets/delete.png"></td>
+        <td v-show="edit"><img v-on:click="deleteStudent" src="@/assets/delete.png"></td> <!-- delte image-->
         </tr>
 
 </template>
 
 <script>
 export default {
-    name: 'studentRow',
+    name: 'studentRow', //
     props: {
-        Student: Object,
+        student: Object,
         edit: Boolean
     },
     methods: {
         arrivedOrLeft(student, present){
-            this.$emit('arrived-or-left', student, present)
+            //console.log("student row", student, present)
+            this.$emit('arrived-or-left', student, present) // send message to parent
         },
         deleteStudent() {
-            if (confirm(`Delete ${this.student.name}?`)) {
-                this.$mit('delete-student', this.student)
+            if (confirm(`Delete ${this.student.name}?`)) { 
+                this.$emit('delete-student', this.student)
             }
         }
     }
@@ -31,7 +32,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style scoped> 
 
 .present {
     color: gray;

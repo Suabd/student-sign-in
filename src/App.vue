@@ -57,7 +57,7 @@ export default {
     },
     studentDeleted(student){ // rename studentDeleted
       // filter returns a new array of all students for whom the function returns true
-      this.student = this.student.filter(function(s) {
+      this.students = this.students.filter(function(s) {
         if (s != student){
           return true
         }
